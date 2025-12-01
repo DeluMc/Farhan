@@ -1,61 +1,91 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UI Gray Minimalis</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="site-header">
+  <!-- TOMBOL DARK / LIGHT MODE -->
+  <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+
+  <header class="site-header">
+    <div class="wrap">
+      <h1>FarhanFana07</h1>
+
+      <div class="top-controls">
+        <input type="text" placeholder="Search">
+
+        <select>
+          <option>Filter</option>
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </select>
+
+        <button class="main-btn">Button</button>
+      </div>
+
+    </div>
+  </header>
+
   <div class="wrap">
-    <h1>FarhanFana07</h1>
+    <div class="grid">
 
-    <div class="top-controls">
-      <input type="text" placeholder="Search">
-      
-      <select>
-        <option>Filter</option>
-        <option>Option 1</option>
-        <option>Option 2</option>
-      </select>
+      <!-- CARD 1 -->
+      <div class="card">
+        <img src="img/Farhan-pp.jpg" class="card-img">
+        <h3>bisa di ubah</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+        <a class="download" href="files/(byDeluMc)- barebone.mcpack" download>Download</a>
+      </div>
 
-      <button class="main-btn">Button</button>
+      <!-- CARD 2 -->
+      <div class="card">
+        <div class="img-placeholder"></div>
+        <h3>bisa di ubah</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+        <a class="download">Download</a>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="card">
+        <div class="img-placeholder"></div>
+        <h3>bisa di ubah</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+        <a class="download">Download</a>
+      </div>
+
     </div>
-
   </div>
-</header>
 
-<div class="wrap">
-  <div class="grid">
+  <!-- SCRIPT DARK MODE -->
+  <script>
+    const body = document.body;
+    const btn = document.getElementById("themeToggle");
 
-    <!-- CARD 1 -->
-    <div class="card">
-      <img src="img/Farhan-pp.jpg" class="card-img">
-      <h3>bisa di ubah</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-      <a class="download" href="files/(byDeluMc)- barebone.mcpack" download>Download</a>
-    </div>
+    // Cek penyimpanan
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark-mode");
+      btn.textContent = "☀️ Light Mode";
+    }
 
-    <!-- CARD 2 -->
-    <div class="card">
-      <div class="img-placeholder"></div>
-      <h3>bisa di ubah</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-      <a class="download">Download</a>
-    </div>
+    btn.onclick = () => {
+      body.classList.toggle("dark-mode");
 
-    <!-- CARD 3 -->
-    <div class="card">
-      <div class="img-placeholder"></div>
-      <h3>bisa di ubah</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-      <a class="download">Download</a>
-    </div>
-
-  </div>
-</div>
+      if (body.classList.contains("dark-mode")) {
+        btn.textContent = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+      } else {
+        btn.textContent = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+      }
+    };
+  </script>
 
 </body>
+
 </html>
