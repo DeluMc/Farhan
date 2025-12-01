@@ -1,12 +1,23 @@
-/* ========== WARNA TEMA ABU-HITAM ========== */
+/* ========== TEMA TERANG (DEFAULT) ========== */
 :root {
-  --bg: #111;          /* background gelap */
-  --card: #f2f2f2;     /* card abu terang */
-  --text: #fff;        /* text putih */
-  --text-dark: #111;   /* text hitam */
-  --gray-light: #e8e8e8;
-  --gray-medium: #cfcfcf;
-  --button-bg: #222;   /* tombol download */
+  --bg: #ffffff;
+  --card: #d7eaff;         /* biru muda */
+  --text: #000;
+  --text-dark: #000;
+  --gray-light: #cfe3ff;   /* input/select */
+  --gray-medium: #bcd5ff;  /* placeholder card */
+  --button-bg: #003b7a;    /* biru tua */
+}
+
+/* ========== TEMA GELAP (MANUAL VIA TOGGLE) ========== */
+.dark-mode {
+  --bg: #0f0f0f;
+  --card: #1a2540;
+  --text: #ffffff;
+  --text-dark: #ffffff;
+  --gray-light: #2c3e66;
+  --gray-medium: #3b4b73;
+  --button-bg: #00285a;
 }
 
 /* ========== GLOBAL ========== */
@@ -15,6 +26,7 @@ body {
   font-family: system-ui, "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--text);
+  transition: 0.25s ease;
 }
 
 .wrap {
@@ -51,7 +63,7 @@ body {
   padding: 14px 24px;
   border: none;
   border-radius: 12px;
-  background: #333;
+  background: var(--button-bg);
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -80,12 +92,19 @@ body {
   margin-bottom: 14px;
 }
 
+.card-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
 .card p {
-  color: #4a4a4a;
+  color: #333;
   font-size: 15px;
 }
 
-/* DOWNLOAD BUTTON */
+/* ========== DOWNLOAD BUTTON ========== */
 .download {
   display: inline-block;
   background: var(--button-bg);
@@ -95,7 +114,8 @@ body {
   text-decoration: none;
   margin-top: 10px;
 }
-/* ========== MOBILE SMOOTH ========== */
+
+/* ========== RESPONSIVE ========== */
 @media (max-width: 600px) {
 
   .site-header h1 {
@@ -135,10 +155,4 @@ body {
     padding: 14px 0;
     font-size: 17px;
   }
-}
-.card-img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 12px;
 }
